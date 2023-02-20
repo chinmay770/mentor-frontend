@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contactPage {
+  background-image: url("../../../images/Authentication/bg.png");
+  background-position:bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.contactUs {
+  position: relative;
+  width: 100%;
+  padding: 10px 100px;
+}
+
+.titleCenter {
+  color: #820000;
+  font-weight: 500;
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contactUs .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.contactUs .title h2 {
+  font-weight: 600;
+}
+
+.formContent {
+  grid-area: formContent;
+}
+
+.info {
+  grid-area: info;
+}
+
+.map {
+  grid-area: map;
+}
+
+.contact {
+  padding: 20px 40px;
+  box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+}
+
+.boxContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5fr 4fr;
+  grid-template-areas: "formContent info" "formContent map";
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.contact h3 {
+  color: #820000;
+  font-weight: 500;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* formContent */
+
+.formBox {
+  position: relative;
+  width: 100%;
+}
+
+.formBox .row50 {
+  display: flex;
+  gap: 20px;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.formBox .row100 .inputBox {
+  width: 100%;
+}
+
+.inputBox span {
+  color: #820000;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.inputBox input {
+  padding: 10px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid #333;
+}
+
+.inputBox textarea {
+  padding: 10px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid #333;
+  resize: none;
+  min-height: 220px;
+  margin-bottom: 10px;
+}
+
+.inputBox input[type="submit"] {
+  background: #820000;
+  color: #fff;
+  border: none;
+  font-size: 1.1em;
+  max-width: 120px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 14px 15px;
+}
+
+.inputBox ::placeholder {
+  color: rgb(128, 81, 81);
+}
+
+/* info */
+.info {
+  background: #820000;
+}
+
+.info h3 {
+  color: #fff;
+}
+
+.info .infoBox div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info .infoBox div span {
+  min-width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #a23341;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.info .infoBox div p {
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.info .infoBox div a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.sci {
+  margin-top: 20px;
+  display: flex;
+}
+
+.sci li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+.sci li a {
+  color: #fff;
+  font-size: 1.5em;
+  color: #ccc;
+}
+
+.sci li a:hover {
+  color: #fff;
+}
+
+.map {
+  padding: 0;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .contactUs {
+    padding: 20px;
+  }
+
+  .boxContent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "formContent"
+    "info"
+    "map";
+  }
+
+  .map {
+    min-height: 300px;
+  }
+
+  .formContent .row50 {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .inputBox {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 30px;
+  }
+
+  .map {
+    min-height: 300px;
+    padding: 0;
+  }
+}

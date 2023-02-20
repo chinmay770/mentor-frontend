@@ -1,0 +1,106 @@
+.App{
+  text-align: center;
+}
+
+.App-header{
+  min-height: 200vh;
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.contact h3 {
+    color: #820000;
+    font-weight: 500;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  .formBox {
+    width: 60%;
+    margin: auto;
+  }
+  
+  .formBox .row50 {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .inputBox  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .formBox .row100 .inputBox .select {
+    width: 100%;
+  }
+  
+  .inputBox span {
+    color: #820000;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .inputBox input {
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+  }
+  
+  .inputBox select {
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+  }
+  
+  .inputBox textarea  {
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+  }
+  
+  .inputBox input[type="submit"] {
+    background: #820000;
+    color: #fff;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 15px 30px;
+    margin: auto;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+  }
+  
+  .inputBox input[type="submit"]:hover {
+    color: #fff;
+    background-color: #3d3d3d;
+  }
+  
+  .inputBox ::placeholder .select ::placeholder{
+    color: rgb(128, 81, 81);
+  }
+  
+  @media (max-width: 991px) {
+    .formContent .row50 {
+      display: flex;
+      gap: 0;
+      flex-direction: column;
+    }
+    .inputBox  {
+      width: 100%;
+    }
+    .contact {
+      padding: 30px;
+    }
+  }

@@ -1,0 +1,18 @@
+.wrapper{
+  padding:0 0 100px;
+  background-image:url("../../../images/Authentication/bg.png");
+  background-position:bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.zoomClass {
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.zoomClass:hover {
+  transform: scale(1.1);
+}

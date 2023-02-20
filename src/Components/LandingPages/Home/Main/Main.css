@@ -1,0 +1,66 @@
+.rait-carousel {
+  height: 90vh;
+}
+
+.rait-carousel-images {
+  height: 90vh;
+  opacity: 0.5;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-container-content {
+  position: absolute;
+  top: 36%;
+  left: 27%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.carousel-container-content > h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 20px auto;
+}
+
+.carousel-container-content > h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 20px auto;
+}
+.button{
+	margin-top: 30px;
+}
+.button a{
+  background-color: #a52a2a;
+	padding:12px 40px;
+	text-decoration: none;
+	color:#fff;
+  border-radius: 10px;
+	font-size: 20px;
+	letter-spacing: 1.5px;
+  transition: all 0.5s ease;
+}
+.button a:hover{
+  background-color: #3d3d3d;
+	color:#fff;
+}
+
+.carousel-item {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .rait-carousel {
+    height: 50vh;
+  }
+  .rait-carousel-images {
+    height: 50vh;
+  }
+}

@@ -1,0 +1,25 @@
+table{
+  border-collapse: collapse;
+  border-spacing: 0 1em;
+  box-shadow: 0 2px 15px rgba(64,64,64,.7);
+  border-radius: 12px 12px 0 0;
+}
+ td , th{
+  padding: 15px 20px;
+  text-align: center;
+  border: 1px solid rgb(155, 155, 155);
+}
+ th{
+  background-color: #820000;
+  color: #fafafa;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+tr{
+  width: 100%;
+  background-color: #fafafa;
+}
+tr:nth-child(even){
+  background-color: #eeeeee;
+}
+ 

@@ -1,0 +1,379 @@
+const [Data,setData] = useState([]);
+  const getStudentData = () =>{
+    const url = ''
+    axios.get(url)
+    .then(response=>{
+      const result = response.data;
+      const {status, message, data}=result;
+      if(status !== 'SUCCESS'){
+        alert(message,status)
+      }
+      else{
+        setData(data)
+        console.log(data)
+      }
+    })
+    .catch(err =>{
+      console.log(err)
+    })
+  }
+
+  useEffect(()=>{
+    getStudentData();
+  },[])
+
+
+
+<div className='row'>
+          <h3 className="btn btn-light w_100 mb-4"> Add new Student</h3>
+        </div>
+        <div className="row">
+        <div className="table-responsive">
+          <table className="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Branch</th>
+                <th>Division</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Data.map((item) =>
+                <tr key={item._id}>
+                  <td>{item.name}</td>
+                  <td>{item.rollno}</td>
+                  <td>{item.branch}</td>
+                  <td>{item.division}</td>
+                  <td style={{minWidth:190}}>
+                    <Button size = 'small' variant="denger"> view </Button>
+                    <Button size = 'small' variant="denger"> view </Button>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+import React from "react";
+import Navbar from "../../helpers/MentorNavbar/Navbar";
+import { Button, Table, Modal, Input } from "antd";
+import { useState } from "react";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+
+const Student = () => {
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingStudent, setEditingStudent] = useState(null);
+  const [dataSource, setDataSource] = useState([
+
+    {
+      id: 1,
+      name: "John",
+      email: "john@gmail.com",
+      address: "John Address",
+    },
+    {
+      id: 2,
+      name: "David",
+      email: "david@gmail.com",
+      address: "David Address",
+    },
+    {
+      id: 3,
+      name: "James",
+      email: "james@gmail.com",
+      address: "James Address",
+    },
+    {
+      id: 4,
+      name: "Sam",
+      email: "sam@gmail.com",
+      address: "Sam Address",
+    },
+  ]);
+  const columns = [
+    {
+      key: "1",
+      title: "ID",
+      dataIndex: "id",
+    },
+    {
+      key: "2",
+      title: "Name",
+      dataIndex: "name",
+    },
+    {
+      key: "3",
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      key: "4",
+      title: "Address",
+      dataIndex: "address",
+    },
+    {
+      key: "5",
+      title: "Actions",
+      render: (record) => {
+        return (
+          <>
+            <Navbar />
+            <div className="container">
+            <EditOutlined
+                    onClick={() => {
+                     onEditStudent(record);
+                    }}
+                  />
+                  <DeleteOutlined
+                    onClick={() => {
+                      onDeleteStudent(record);
+                    }}
+                    style={{ color: "red", marginLeft: 12 }}
+                  />
+            </div>
+          </>
+        );
+      },
+    },
+  ];
+
+  
+}
+export default Student;
+
+
+
+.App {
+  text-align: center;
+}
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+message
+
+import React from "react";
+import Navbar from "../../helpers/MentorNavbar/Navbar";
+import "./style.css"
+const Messsage = () => {
+  return (
+    <>
+      <Navbar />
+      <div className="container">
+       <h1 style={{textAling: "center", color:'#820000', padding: "20px"}}>
+        Message Section
+       </h1>
+      
+      </div>
+      <form action="#" method="post">
+      <div className="formBox">
+          <div className="row50">
+            <div className="inputBox">
+              <span>NAME</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+               <br  />
+              <span>EMAIL ID</span>
+              <input
+                type="text"
+                name="mail"
+                placeholder="Mail id"
+              />
+              <br  />
+              <span>MESSAGE</span>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Write your message here..."
+              ></textarea>
+
+              <input
+                type="submit"
+                value="Send Message"
+              />
+
+            </div>
+          </div>
+      </div>
+      </form>
+      
+    </>
+  );
+};
+
+export default Messsage;
+
+
+////////////////////////////////////////////////////////////////////
+
+const [isEditing, setIsEditing] = useState(false);
+  const [editingStudent, setEditingStudent] = useState(null);
+  const [dataSource, setDataSource] = useState([
+    {
+      id: 1,
+      name: "John",
+      email: "john@gmail.com",
+      address: "John Address",
+    },
+    {
+      id: 2,
+      name: "David",
+      email: "david@gmail.com",
+      address: "David Address",
+    },
+    {
+      id: 3,
+      name: "James",
+      email: "james@gmail.com",
+      address: "James Address",
+    },
+    {
+      id: 4,
+      name: "Sam",
+      email: "sam@gmail.com",
+      address: "Sam Address",
+    },
+  ]);
+  const columns = [
+    {
+      key: "1",
+      title: "ID",
+      dataIndex: "id",
+    },
+    {
+      key: "2",
+      title: "Name",
+      dataIndex: "name",
+    },
+    {
+      key: "3",
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      key: "4",
+      title: "Address",
+      dataIndex: "address",
+    },
+    {
+      key: "5",
+      title: "Actions",
+      render: (record) => {
+        return (
+          <>
+            <EditOutlined
+              onClick={() => {
+                onEditStudent(record);
+              }}
+            />
+            <DeleteOutlined
+              onClick={() => {
+                onDeleteStudent(record);
+              }}
+              style={{ color: "red", marginLeft: 12 }}
+            />
+          </>
+        );
+      },
+    },
+  ];
+
+  const onAddStudent = () => {
+    const randomNumber = parseInt(Math.random() * 1000);
+    const newStudent = {
+      id: randomNumber,
+      name: "Name " + randomNumber,
+      email: randomNumber + "@gmail.com",
+      address: "Address " + randomNumber,
+    };
+    setDataSource((pre) => {
+      return [...pre, newStudent];
+    });
+  };
+  const onDeleteStudent = (record) => {
+    Modal.confirm({
+      title: "Are you sure, you want to delete this student record?",
+      okText: "Yes",
+      okType: "danger",
+      onOk: () => {
+        setDataSource((pre) => {
+          return pre.filter((student) => student.id !== record.id);
+        });
+      },
+    });
+  };
+  const onEditStudent = (record) => {
+    setIsEditing(true);
+    setEditingStudent({ ...record });
+  };
+  const resetEditing = () => {
+    setIsEditing(false);
+    setEditingStudent(null);
+  };
+
+
+<header className="App-header">
+        <Button onClick={onAddStudent} style={{marginBottom: '20px', }}>Add a new student</Button>
+        <Table columns={columns} dataSource={dataSource}></Table>
+        <Modal
+          title="Edit Student"
+          open={isEditing}
+          okText="Save"
+          onCancel={() => {
+            resetEditing();
+          }}
+          onOk={()=>{
+            setDataSource((pre)=> {
+              return pre.map((student)=> {
+                if(student.id === editingStudent.id){
+                  return editingStudent;
+                }else {
+                  return student;
+                }
+              });
+            });
+            resetEditing();
+          }}
+          >
+            <Input
+              value={editingStudent?.email}
+              onChange={(e) => {
+                setDataSource((pre)=> {
+                  return {...pre,email: e.target.value};
+                });
+              }}
+            />
+            <Input
+              value={editingStudent?.address}
+              onChange={(e)=> {
+                setDataSource((pre)=> {
+                  return{...pre,address:e.target.value};
+                });
+              }}
+            />
+          </Modal>
+        </header>
+          </div>
