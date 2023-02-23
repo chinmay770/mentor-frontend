@@ -43,6 +43,13 @@ const Dashboard = () => {
     history(allRoutes.allLoginPage, { replace: true });
   };
 
+  const [message, setMessage] = useState("");
+
+  const sendMessage = () => {
+    console.log(`Sending message: ${message}`);
+    setMessage("");
+  };
+
 
  
   return (
@@ -63,13 +70,28 @@ const Dashboard = () => {
               <div className="calendar">
                 <Calendar />
                 <div className="years">
-                  <h5 style={{padding: "10px", color: "#373737",paddingRight: "50px"}}>Curriculam</h5>
+                  <h5 style={{padding: "10px", color: "#373737",paddingRight: "50px", marginTop: "-50px"}}>Curriculam</h5>
                   <h6 style={{padding: "10px", backgroundColor: "#820000",width: "250px"}}>Second year</h6>
                   <h6 style={{padding: "10px", backgroundColor: "#820000",width: "250px"}}>Third year</h6>
                   <h6 style={{padding: "10px", backgroundColor: "#820000",width: "250px"}}onClick>
                     <a href="https://drive.google.com/file/d/11Cc9DZYxsMyYas5yt3KX8ptddL5PZ7_3/view?usp=share_link"></a>
                     Last year
                   </h6>
+                </div>
+                <br></br>
+
+                <div className="StudentMessage">
+                  <textarea style={{height: "200px", marginTop: "10px"}}
+                    className="form-control"
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type your message here"
+                  /><br></br>
+                   <button style={{width: "200px", height: "30px", backgroundColor: "#820000", color: "white", marginLeft: "65px"}}
+                   
+                   onClick={sendMessage}>Send to all Students</button>
+                  
                 </div>
               </div>
               <div className="Inbox">
@@ -113,25 +135,21 @@ const Dashboard = () => {
                     </CardContent>
                   </Card>
                 </Box>
-                <br/>
-                <Box width="300px">
-                  <Card>
-                    <CardMedia
-                      component={'img'}
-                      height='150'
-                      image="https://previews.123rf.com/images/blankstock/blankstock1906/blankstock190604679/125956295-no-or-stop-graduation-cap-icon-education-sign-student-hat-symbol-prohibited-ban-stop-symbol-no-gradu.jpg"
-                      alt='unsplash image'
-                    />
-                    <CardContent style={{backgroundColor: "#820000"}}>
-                      <Typography style={{textAlign: "center", color: "white"}}>
-                        <h6>Defaulter Students</h6>
-                      </Typography>
-                      <Typography style={{textAlign: "center", color: "white"}}>
-                        13
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Box>
+                
+                <div className="StudentMessage">
+                  <textarea style={{height: "200px", marginTop: "30px"}}
+                    className="form-control"
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type your message here"
+                  /><br></br>
+                   <button style={{width: "200px", height: "30px", backgroundColor: "#820000", color: "white", marginLeft: "65px"}}
+                   
+                   onClick={sendMessage}>Send to all Students</button>
+                  
+                </div>
+
               </div>
               
             </div>
