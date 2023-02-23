@@ -54,19 +54,11 @@ const DashBoard = () => {
     <>
       <Navbar />
 
-      <div
-        className="container py-3"
-        style={{ display: "flex", flexDirection: "column" }}
-      >
+      <div className="container py-3" style={{ display: "flex", flexDirection: "column" }}>
         <div className="mb-5 header-container">
           <div className="dashboard-section">
             <h1 style={{ color: "#820000" }}>Welcome, {info?.name}!</h1>
-            <button
-              className="logout-icon"
-              data-bs-toggle="tooltip"
-              title="Logout"
-              onClick={handleSubmit}
-            >
+            <button className="logout-icon" data-bs-toggle="tooltip" title="Logout" onClick={handleSubmit}>
               <ion-icon size="large" name="exit"></ion-icon>
             </button>
           </div>

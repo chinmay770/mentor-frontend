@@ -377,3 +377,13 @@ const [isEditing, setIsEditing] = useState(false);
           </Modal>
         </header>
           </div>
+
+          <div className="container">
+        <h1 style={{ textAlign: "center", color: "#820000", padding: "20px" }}>
+          Add Students Here
+        </h1>
+
+
+         <div className="calendar-container" style={{alignContent: "left"}}>
+        <Calendar value={date} onChange={handleDateChange} />
+      </div>
